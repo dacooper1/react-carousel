@@ -67,5 +67,18 @@ it("works when you click on the left arrow", () => {
 
 })
 
+it("hides the left arrow when on the first image", () => {
+  const { container } = render(
+    <Carousel
+      photos={TEST_IMAGES}
+      title="images for testing"
+    />
+  );
+  
+  const leftArrow = container.querySelector(".bi-arrow-left-circle")
+
+  expect(leftArrow).not.toBeInTheDocument();
+})
+
 
  
