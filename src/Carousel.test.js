@@ -1,7 +1,13 @@
 import { render, fireEvent } from "@testing-library/react";
 import Carousel from "./Carousel";
 import TEST_IMAGES from "./_testCommon.js";
-import App from "./App"
+
+// smoketest
+it("should render without breaking", () => {
+  render(<Carousel photos={TEST_IMAGES} title="Test Carousel" />);
+});
+
+
 
 it("works when you click on the right arrow", function() {
   const { container } = render(
@@ -30,5 +36,6 @@ it("works when you click on the right arrow", function() {
     container.querySelector('img[alt="testing image 2"]')
   ).toBeInTheDocument();
 });
+
 
  
