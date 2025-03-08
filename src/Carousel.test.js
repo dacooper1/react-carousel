@@ -2,10 +2,16 @@ import { render, fireEvent } from "@testing-library/react";
 import Carousel from "./Carousel";
 import TEST_IMAGES from "./_testCommon.js";
 
-// smoketest
+// smoke
 it("should render without breaking", () => {
   render(<Carousel photos={TEST_IMAGES} title="Test Carousel" />);
 });
+
+// snapshot
+it("should be the same as previous render", ()  => {
+  const {asFragment} = render(<Carousel photos={TEST_IMAGES} title="Test Carousel"  />);
+  expect(asFragment()).toMatchSnapshot();
+})
 
 
 
