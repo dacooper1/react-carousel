@@ -11,9 +11,6 @@ exports[`should be the same as previous render 1`] = `
     <div
       class="Carousel-main"
     >
-      <i
-        class="bi bi-arrow-left-circle"
-      />
       <div
         class="Card"
       >
