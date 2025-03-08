@@ -20,7 +20,7 @@ import Card from "./Card";
   const currCard = photos[currCardIdx];
   const total = photos.length;
   const isFirst = currCardIdx === 0;
-  const isLast = photos[total-1]
+  const isLast = currCardIdx === (total - 1);
 
   //Increments currCardIdx state by 1
   function goForward() {
@@ -50,10 +50,10 @@ import Card from "./Card";
           currNum={currCardIdx + 1}
           totalNum={total}
         />
-        <i
+        {isLast ? null : <i
           className="bi bi-arrow-right-circle"
           onClick={goForward}
-        />
+        />}
       </div>
     </div>
   );
