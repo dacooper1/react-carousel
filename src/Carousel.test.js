@@ -80,5 +80,21 @@ it("hides the left arrow when on the first image", () => {
   expect(leftArrow).not.toBeInTheDocument();
 })
 
+it("hides the right arrow when on the first image", () => {
+  const { container } = render(
+    <Carousel
+      photos={TEST_IMAGES}
+      title="images for testing"
+    />
+  );
+
+  const rightArrow = container.querySelector(".bi-arrow-right-circle")
+
+  fireEvent.click(rightArrow)
+  fireEvent.click(rightArrow)
+
+  expect(rightArrow).not.toBeInTheDocument();
+})
+
 
  
